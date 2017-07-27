@@ -1149,12 +1149,16 @@ var MobileEsp = {
 
 		else
 			return false;
+	},
+
+	SetUserAgent(userAgent) {
+		this.uagent = userAgent.toLowerCase();
+		
+		//Save these properties to speed processing
+		this.isWebkit = this.DetectWebkit();
+		this.isIphone = this.DetectIphone();
+		this.isAndroid = this.DetectAndroid();
+		this.isAndroidPhone = this.DetectAndroidPhone();
 	}
 
 };
-
-//Initialize the MobileEsp object
-MobileEsp.InitDeviceScan();
-
-
-
